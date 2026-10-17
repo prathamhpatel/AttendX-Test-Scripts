@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from conftest import login
+from conftest import BASE_URL, login
 
 
 def test_valid_login(driver):
@@ -26,3 +26,9 @@ def test_empty_fields(driver):
     login(driver, "", "")
     error = driver.find_element(By.CLASS_NAME, "error-msg").text
     assert error == "Username and password are required"
+
+
+def test_password_field_is_masked(driver):
+    driver.get(f"{BASE_URL}/login")
+    field = driver.find_element(By.ID, "password")
+    assert field.get_attribute("type") == "password"
