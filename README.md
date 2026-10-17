@@ -1,23 +1,18 @@
 # AttendX-Test-Scripts
 
-Selenium + pytest automation scripts for **AttendX**, the student attendance application.
-All QA engineers now share test scripts through this repository instead of e-mail / pen drives.
+Sample automation test scripts for **AttendX**, the student attendance application.
+The QA team keeps all test scripts in this repository instead of sharing them by e-mail or pen drive.
+
+> **Note:** AttendX is a demo scenario. The base URL, element IDs and test data in these scripts are
+> placeholders, and the scripts have not been run against a real application.
 
 ## Test scripts
 
 | File | What it tests |
 |------|---------------|
-| `test_login.py` | Valid login, wrong password, empty username/password |
+| `test_login.py` | Valid login, wrong password, empty username/password, masked password field |
 | `test_mark_attendance.py` | Marking students Present/Absent and saving; saving without selecting a class |
-| `conftest.py` | Shared Chrome `driver` fixture and `login()` helper |
-
-## How to run
-
-```bash
-pip install -r requirements.txt
-export ATTENDX_URL=http://localhost:8080   # AttendX server under test
-pytest -v
-```
+| `conftest.py` | Shared setup used by both test files (browser fixture, base URL, login helper) |
 
 ## Team workflow
 
