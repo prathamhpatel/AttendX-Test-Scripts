@@ -19,3 +19,4 @@ The QA team keeps all test scripts in this repository instead of sharing them by
 1. `git pull` before you start work.
 2. Make your change, then `git add` + `git commit -m "<clear message>"`.
 3. `git push` so the rest of the team gets it.
+
